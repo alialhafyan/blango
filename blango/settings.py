@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-lrk5@mq1zsey331xu27xq9c!%23#(wj#3bh9$+de@dw+z+8jm=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bonanzaopus-genesisfinal-8000.codio.io']
 
 
 # Application definition
