@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-lrk5@mq1zsey331xu27xq9c!%23#(wj#3bh9$+de@dw+z+8jm=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ladymonarch-chefmystery.codio.io']
+ALLOWED_HOSTS = ['tokyopassage-floorgold-8000.codio.io']
 
 
 # Application definition
@@ -42,11 +42,15 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 ]
 REST_FRAMEWORK = {
+  
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
-    ]
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly"
+    ],
 }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
