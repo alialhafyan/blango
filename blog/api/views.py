@@ -13,6 +13,7 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes=[AuthorModifyOrReadOnly | IsAdminUserForObject]
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
 class UserDetail(generics.RetrieveAPIView):
     lookup_field = "email" 
     queryset = User.objects.all()
