@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-lrk5@mq1zsey331xu27xq9c!%23#(wj#3bh9$+de@dw+z+8jm=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kansasforward-oxfordvendor-8000.codio.io']
+ALLOWED_HOSTS = ['mayorkarate-fragilecandle-8000.codio.io']
 
 
 # Application definition
@@ -40,7 +40,14 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
 ]
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+        "Basic": {"type": "basic"},
+        }
+    }
 REST_FRAMEWORK = {
   
     "DEFAULT_AUTHENTICATION_CLASSES": [
@@ -52,6 +59,8 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticatedOrReadOnly"
     ],
 }
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

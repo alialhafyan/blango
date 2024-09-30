@@ -13,7 +13,7 @@ class Comment(models.Model):
     created_at=models.DateTimeField(auto_now_add=True,blank=True)
     modified_at=models.DateTimeField(null=True)
 class Post(models.Model):
-    author_id = models.IntegerField() 
+    author=models.ForeignKey(User,on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True) 
     modified_at  = models.DateTimeField(auto_now=True)   
     published_at = models.DateTimeField(auto_now_add=True) 

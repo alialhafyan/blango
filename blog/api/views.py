@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-
+    renderer_classes([OpenAPIRenderer, SwaggerUIRenderer])
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [AuthorModifyOrReadOnly | IsAdminUserForObject]
